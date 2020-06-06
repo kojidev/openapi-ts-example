@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  redoc:
+    image: redocly/redoc:latest
+    container_name: openapi-ts-redoc-example
+    volumes:
+    - ${PWD}/openapi.json:/usr/share/nginx/html/static/openapi.json
+    environment:
+      SPEC_URL: /static/openapi.json
+    ports:
+    - 8080:80
